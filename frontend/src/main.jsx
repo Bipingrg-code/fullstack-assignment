@@ -8,6 +8,8 @@ import Menu from './Pages/Menu.jsx'
 import About from './Pages/About.jsx'
 import Contact from './Pages/Contact.jsx'
 import Login from './Pages/Login.jsx';
+import NewProduct from './Pages/NewProduct.jsx';
+import Signup from './Pages/Signup.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,6 +19,8 @@ const router = createBrowserRouter(
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
       <Route path="login" element={<Login />} />
+      <Route path="newproduct" element={<NewProduct />} />
+      <Route path="signup" element={<Signup />} />
     </Route>
   )
 )

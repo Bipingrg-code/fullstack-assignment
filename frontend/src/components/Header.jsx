@@ -10,12 +10,12 @@ const Header = () => {
   }
   return (
     <>
-      <div className="fixed w-full shadow-md px-6 z-50 md:px-0">
+      <div className="fixed w-full shadow-md px-6 z-50 bg-white md:px-0 ">
         {/* Desktop */}
         <div className="flex items-center justify-between md:container md:mx-auto">
           <Link to={""}>
             <div className="h-14">
-              <a href="http://" className=" flex items-center  h-full font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-secondary-300 to-secondary-100 md:text-3xl ">Hamro Kitaab</a>
+              <div className=" flex items-center  h-full font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-secondary-300 to-secondary-100 md:text-3xl ">Hamro Kitaab</div>
             </div>
           </Link>
           <div className="flex items-center gap-2 md:gap-6">
@@ -33,8 +33,8 @@ const Header = () => {
               <FaRegCircleUser />
               {
                 showMenu &&
-                <div className="absolute right-2 bg-white p-2 shadow drop-shadow-md text-base rounded">
-                  <p className="whitespace-nowrap">New Product</p>
+                <div className="absolute right-2 bg-white p-2 shadow drop-shadow-md text-base  text-slate-500 rounded">
+                  <Link to={"newproduct"}><p className="whitespace-nowrap">New Products</p></Link>
                   <Link to={"login"}> <p className="whitespace-nowrap">Login</p></Link>
                 </div>
               }

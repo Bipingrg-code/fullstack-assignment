@@ -5,9 +5,9 @@ function App() {
   return (
     <>
     <Header />
-    <main className="pt-14">
+    <div className="pt-14 min-h-[calc(100vh)] bg-slate-50 ">
       <Outlet />
-    </main>
+    </div>
     </>
   )
 }
