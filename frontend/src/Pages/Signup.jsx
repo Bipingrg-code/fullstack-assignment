@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
+import { addUsers } from "../Services/api"
 
 const Signup = () => {
     //navigate after signup
@@ -26,6 +27,7 @@ const Signup = () => {
         const { fullname, email, password, confirmPassword } = data
         if (fullname && email && password && confirmPassword) {
             if (password === confirmPassword) {
+                addUsers(data)
                 alert('data submited.!')
                 navigate("/login")
             } else {
@@ -36,6 +38,7 @@ const Signup = () => {
             alert("Please fill all fields.")
         }
     }
+    
     return (
         <div className="bg-grey-lighter min-h-screen flex flex-col">
             <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
