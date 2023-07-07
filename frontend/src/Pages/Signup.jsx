@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 import { addUsers } from "../Services/api"
+import { toast } from "react-hot-toast"
 
 const Signup = () => {
     //navigate after signup
@@ -28,7 +29,7 @@ const Signup = () => {
         if (fullname && email && password && confirmPassword) {
             if (password === confirmPassword) {
                 addUsers(data)
-                alert('data submited.!')
+               toast('Signup Sucessfully.!')
                 navigate("/login")
             } else {
                 alert("Check the Password & Confirm Password are not Equle")

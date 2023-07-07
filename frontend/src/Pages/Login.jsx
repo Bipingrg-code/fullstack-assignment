@@ -1,14 +1,19 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
-
+import { Link, useNavigate } from "react-router-dom"
+import { loginUser } from "../Services/api.js"
+import { useSelector } from "react-redux";
 const Login = () => {
   //form data grab
+  const navigate = useNavigate();
   const [data, setData] = useState({
     email: "",
     password: "",
 
   })
-  console.log(data)
+
+ const userData = useSelector(state => state)
+  console.log(userData)
+
 
   const handleOnChangeData = (e) => {
     const name = e.target.name
@@ -21,7 +26,11 @@ const Login = () => {
     //grab data from state
     const { email, password } = data
     if (email && password) {
+      loginUser(data)
       alert('Login Sucessfully.!')
+      setTimeout(() => {
+        navigate("/")
+      }, 100);
     }
     else {
       alert("Please fill all fields.")
